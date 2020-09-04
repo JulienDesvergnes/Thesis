@@ -7,7 +7,7 @@
         _NumberOfElectrodesH ("NBEH",Float) = 15
         _tailleZoneW ("tailleZoneW",Float) = 0.05555555555 // = 1/18 en flotant
         _tailleZoneH ("tailleZoneH",Float) = 0.06666666666 // = 1/15 en flotant
-        _sizeWindowSobel("SizeWindowSobel", Float) = 0.002
+        _sizeWindowSobel("SizeWindowSobel", Float) = 0.003
         _rayon("rayon", Float) = 0.02
     }
 

@@ -1,0 +1,4 @@
+Steps,Policy/Extrinsic Value Estimate,Policy/Entropy,Environment/Cumulative Reward,Environment/Episode Length
+2000,-0.015156917,1.0986023,46.0,1984.0
+3000,-0.008775853,1.0013541,None,None
+4000,0.0113113,0.99366987,642.0,1984.0

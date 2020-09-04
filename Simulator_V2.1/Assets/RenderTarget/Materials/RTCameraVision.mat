@@ -1,0 +1,356 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: RTCameraVision
+  m_Shader: {fileID: 4800000, guid: c0c0271b76304fe65862a37df7f1e2c3, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 8400000, guid: d568865fc5d73f141892e5922d43a7d5, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _NumberOfElectrodesH: 15
+    - _NumberOfElectrodesW: 18
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _ZWrite: 1
+    - _k00: 0
+    - _k01: 0
+    - _k0_0: 0
+    - _k0_1: 0
+    - _k0_10: 0
+    - _k0_11: 0
+    - _k0_12: 0
+    - _k0_13: 0
+    - _k0_14: 0
+    - _k0_15: 0
+    - _k0_16: 0
+    - _k0_17: 0
+    - _k0_2: 0
+    - _k0_3: 0
+    - _k0_4: 0
+    - _k0_5: 0
+    - _k0_6: 0
+    - _k0_7: 0
+    - _k0_8: 0
+    - _k0_9: 0
+    - _k10_0: 0
+    - _k10_1: 0
+    - _k10_10: 0
+    - _k10_11: 0
+    - _k10_12: 0
+    - _k10_13: 0
+    - _k10_14: 0
+    - _k10_15: 0
+    - _k10_16: 0
+    - _k10_17: 0
+    - _k10_2: 0
+    - _k10_3: 0
+    - _k10_4: 0
+    - _k10_5: 0
+    - _k10_6: 0
+    - _k10_7: 0
+    - _k10_8: 0
+    - _k10_9: 0
+    - _k11: 0
+    - _k11_0: 0
+    - _k11_1: 0
+    - _k11_10: 0
+    - _k11_11: 0
+    - _k11_12: 0
+    - _k11_13: 0
+    - _k11_14: 0
+    - _k11_15: 0
+    - _k11_16: 0
+    - _k11_17: 0
+    - _k11_2: 0
+    - _k11_3: 0
+    - _k11_4: 0
+    - _k11_5: 0
+    - _k11_6: 0
+    - _k11_7: 0
+    - _k11_8: 0
+    - _k11_9: 0
+    - _k12_0: 0
+    - _k12_1: 0
+    - _k12_10: 0
+    - _k12_11: 0
+    - _k12_12: 0
+    - _k12_13: 0
+    - _k12_14: 0
+    - _k12_15: 0
+    - _k12_16: 0
+    - _k12_17: 0
+    - _k12_2: 0
+    - _k12_3: 0
+    - _k12_4: 0
+    - _k12_5: 0
+    - _k12_6: 0
+    - _k12_7: 0
+    - _k12_8: 0
+    - _k12_9: 0
+    - _k13_0: 0
+    - _k13_1: 0
+    - _k13_10: 0
+    - _k13_11: 0
+    - _k13_12: 0
+    - _k13_13: 0
+    - _k13_14: 0
+    - _k13_15: 0
+    - _k13_16: 0
+    - _k13_17: 0
+    - _k13_2: 0
+    - _k13_3: 0
+    - _k13_4: 0
+    - _k13_5: 0
+    - _k13_6: 0
+    - _k13_7: 0
+    - _k13_8: 0
+    - _k13_9: 0
+    - _k14_0: 0
+    - _k14_1: 0
+    - _k14_10: 0
+    - _k14_11: 0
+    - _k14_12: 0
+    - _k14_13: 0
+    - _k14_14: 0
+    - _k14_15: 0
+    - _k14_16: 0
+    - _k14_17: 0
+    - _k14_2: 0
+    - _k14_3: 0
+    - _k14_4: 0
+    - _k14_5: 0
+    - _k14_6: 0
+    - _k14_7: 0
+    - _k14_8: 0
+    - _k14_9: 0
+    - _k1_0: 0
+    - _k1_1: 0
+    - _k1_10: 0
+    - _k1_11: 0
+    - _k1_12: 0
+    - _k1_13: 0
+    - _k1_14: 0
+    - _k1_15: 0
+    - _k1_16: 0
+    - _k1_17: 0
+    - _k1_2: 0
+    - _k1_3: 0
+    - _k1_4: 0
+    - _k1_5: 0
+    - _k1_6: 0
+    - _k1_7: 0
+    - _k1_8: 0
+    - _k1_9: 0
+    - _k2_0: 0
+    - _k2_1: 0
+    - _k2_10: 0
+    - _k2_11: 0
+    - _k2_12: 0
+    - _k2_13: 0
+    - _k2_14: 0
+    - _k2_15: 0
+    - _k2_16: 0
+    - _k2_17: 0
+    - _k2_2: 0
+    - _k2_3: 0
+    - _k2_4: 0
+    - _k2_5: 0
+    - _k2_6: 0
+    - _k2_7: 0
+    - _k2_8: 0
+    - _k2_9: 0
+    - _k3_0: 0
+    - _k3_1: 0
+    - _k3_10: 0
+    - _k3_11: 0
+    - _k3_12: 0
+    - _k3_13: 0
+    - _k3_14: 0
+    - _k3_15: 0
+    - _k3_16: 0
+    - _k3_17: 0
+    - _k3_2: 0
+    - _k3_3: 0
+    - _k3_4: 0
+    - _k3_5: 0
+    - _k3_6: 0
+    - _k3_7: 0
+    - _k3_8: 0
+    - _k3_9: 0
+    - _k4_0: 0
+    - _k4_1: 0
+    - _k4_10: 0
+    - _k4_11: 0
+    - _k4_12: 0
+    - _k4_13: 0
+    - _k4_14: 0
+    - _k4_15: 0
+    - _k4_16: 0
+    - _k4_17: 0
+    - _k4_2: 0
+    - _k4_3: 0
+    - _k4_4: 0
+    - _k4_5: 0
+    - _k4_6: 0
+    - _k4_7: 0
+    - _k4_8: 0
+    - _k4_9: 0
+    - _k5_0: 0
+    - _k5_1: 0
+    - _k5_10: 0
+    - _k5_11: 0
+    - _k5_12: 0
+    - _k5_13: 0
+    - _k5_14: 0
+    - _k5_15: 0
+    - _k5_16: 0
+    - _k5_17: 0
+    - _k5_2: 0
+    - _k5_3: 0
+    - _k5_4: 0
+    - _k5_5: 0
+    - _k5_6: 0
+    - _k5_7: 0
+    - _k5_8: 0
+    - _k5_9: 0
+    - _k6_0: 0
+    - _k6_1: 0
+    - _k6_10: 0
+    - _k6_11: 0
+    - _k6_12: 0
+    - _k6_13: 0
+    - _k6_14: 0
+    - _k6_15: 0
+    - _k6_16: 0
+    - _k6_17: 0
+    - _k6_2: 0
+    - _k6_3: 0
+    - _k6_4: 0
+    - _k6_5: 0
+    - _k6_6: 0
+    - _k6_7: 0
+    - _k6_8: 0
+    - _k6_9: 0
+    - _k7_0: 0
+    - _k7_1: 0
+    - _k7_10: 0
+    - _k7_11: 0
+    - _k7_12: 0
+    - _k7_13: 0
+    - _k7_14: 0
+    - _k7_15: 0
+    - _k7_16: 0
+    - _k7_17: 0
+    - _k7_2: 0
+    - _k7_3: 0
+    - _k7_4: 0
+    - _k7_5: 0
+    - _k7_6: 0
+    - _k7_7: 0
+    - _k7_8: 0
+    - _k7_9: 0
+    - _k8_0: 0
+    - _k8_1: 0
+    - _k8_10: 0
+    - _k8_11: 0
+    - _k8_12: 0
+    - _k8_13: 0
+    - _k8_14: 0
+    - _k8_15: 0
+    - _k8_16: 0
+    - _k8_17: 0
+    - _k8_2: 0
+    - _k8_3: 0
+    - _k8_4: 0
+    - _k8_5: 0
+    - _k8_6: 0
+    - _k8_7: 0
+    - _k8_8: 0
+    - _k8_9: 0
+    - _k9_0: 0
+    - _k9_1: 0
+    - _k9_10: 0
+    - _k9_11: 0
+    - _k9_12: 0
+    - _k9_13: 0
+    - _k9_14: 0
+    - _k9_15: 0
+    - _k9_16: 0
+    - _k9_17: 0
+    - _k9_2: 0
+    - _k9_3: 0
+    - _k9_4: 0
+    - _k9_5: 0
+    - _k9_6: 0
+    - _k9_7: 0
+    - _k9_8: 0
+    - _k9_9: 0
+    - _rayon: 0.02
+    - _sizeWindowSobel: 0.003
+    - _tailleZoneH: 0.06666667
+    - _tailleZoneW: 0.055555556
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

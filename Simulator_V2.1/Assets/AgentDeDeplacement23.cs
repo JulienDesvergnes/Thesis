@@ -61,6 +61,9 @@ public class AgentDeDeplacement23 : Agent
     // prochaineLigne
     int numLigneAPasser = 1;
 
+    // Generateur de trajectoire
+    public GenerateurDeTrajectoire generateurDeTrajectoire;
+
     public void FixedUpdate()
     {
         WaitTimeInference();
@@ -179,9 +182,7 @@ public class AgentDeDeplacement23 : Agent
             AddReward(-10.0f);
         }
 
-        else if (b_surLaLigne) {
-            AddReward(1.0f);
-        } 
+        AddReward(-1.0f);
 
         recompense.color = Color.green;
         recompense.text = "Recompense = " + (getM_Reward()).ToString();
@@ -296,6 +297,8 @@ public class AgentDeDeplacement23 : Agent
     }
 
     public override void OnEpisodeBegin() {
+        // positionInitiale = generateurDeTrajectoire.PositionDeCreation;
+
         transform.position = positionInitiale;
         transform.rotation = rotationInitiale;
         numLigneAPasser = 1;
@@ -307,6 +310,9 @@ public class AgentDeDeplacement23 : Agent
         }
 
         distanceInitiale = CalculateurDeDistance.GetComponent<CalculDifference>().calculDistance();
+
+        generateurDeTrajectoire.build_trajectoire();
+
     }
 
     public override float[] Heuristic()

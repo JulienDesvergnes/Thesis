@@ -57,7 +57,7 @@ public class DeplacementManuel : MonoBehaviour
 
         GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);;
 
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.LeftArrow))
         {
             transform.position = transform.position + (-transform.right * movementSpeed * Time.fixedDeltaTime);
         }
@@ -67,7 +67,7 @@ public class DeplacementManuel : MonoBehaviour
             transform.position = transform.position + (transform.right * movementSpeed * Time.fixedDeltaTime);
         }
 
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.UpArrow))
         {
             transform.position = transform.position + (transform.forward * movementSpeed * Time.fixedDeltaTime);
         }
@@ -77,14 +77,14 @@ public class DeplacementManuel : MonoBehaviour
             transform.position = transform.position + (-transform.forward * movementSpeed * Time.fixedDeltaTime);
         }
 
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            transform.position = transform.position + (transform.up * movementSpeed * Time.fixedDeltaTime);
+            transform.Rotate(0.0f, -90.0f, 0.0f, Space.Self);
         }
 
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            transform.position = transform.position + (-transform.up * movementSpeed * Time.fixedDeltaTime);
+            transform.Rotate(0.0f, 90.0f, 0.0f, Space.Self);
         }
 
         if (Input.GetKey(KeyCode.R) || Input.GetKey(KeyCode.PageUp))

@@ -13,6 +13,10 @@ TagManager:
   - Canvas
   - Mur
   - PointRelais
+  - UIEstSurLaLigne
+  - UIEstAligneAvecLaLigne
+  - Text
+  - CamCasque
   layers:
   - Default
   - TransparentFX

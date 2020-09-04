@@ -248,6 +248,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -718,6 +719,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1518,6 +1520,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1909,7 +1912,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &660273157
 Transform:
   m_ObjectHideFlags: 0
@@ -1984,10 +1987,10 @@ MonoBehaviour:
     vectorActionSize: 02000000
     vectorActionDescriptions: []
     vectorActionSpaceType: 0
-  m_Model: {fileID: 5022602860645237092, guid: 1f4ac8c9d76e03d318f6eba20dba6065, type: 3}
+  m_Model: {fileID: 5022602860645237092, guid: cd44b6c25ca8928459f5bd38e71451df, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
-  m_BehaviorName: AgentDeRestitution23_TO9
+  m_BehaviorName: AgentDeRestitution23_TO11
   TeamId: 0
   m_UseChildSensors: 1
 --- !u!114 &660273161
@@ -2116,6 +2119,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2323,7 +2327,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 823
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 3646e438e2ca7a600879e28a3426d370, type: 2}
+  m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 1
   m_TargetEye: 3
   m_HDR: 1
@@ -2385,6 +2389,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2546,7 +2551,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &965828188
 Transform:
   m_ObjectHideFlags: 0
@@ -2621,7 +2626,7 @@ MonoBehaviour:
     vectorActionSize: 03000000
     vectorActionDescriptions: []
     vectorActionSpaceType: 0
-  m_Model: {fileID: 5022602860645237092, guid: 20389e40483d36937be7eb5b2e397a69, type: 3}
+  m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: AgentDeDeplacement23_TO27
@@ -2656,6 +2661,7 @@ MonoBehaviour:
   - {fileID: 597818291}
   - {fileID: 82133175}
   - {fileID: 1055734483}
+  generateurDeTrajectoire: {fileID: 1120842473}
 --- !u!65 &965828193
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2908,6 +2914,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3176,10 +3183,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96feac68f95a31641b915cf8f33ce5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sol: {fileID: 0}
-  ligne: {fileID: 0}
-  mur: {fileID: 0}
-  centreDuMonde: {x: 0, y: 0, z: 0}
+  sol: {fileID: 4900534503276664619, guid: 1d34b367836e2c86b853b4b9fe5c2b59, type: 3}
+  ligne: {fileID: 316220883084914932, guid: 9f72466f8a68c5744a8e16a765f30b60, type: 3}
+  mur: {fileID: 6604165122718834555, guid: a05a7f36f0021763fbdab04f4516260e, type: 3}
+  contour: {fileID: 8020465157463739055, guid: 0a8f8d2e80209e150ace2ab4a797ad7d, type: 3}
+  PositionDeCreation: {x: 50, y: 10, z: 50}
+  tailleDeLaMap: {x: 20, y: 20}
+  name: Map1
+  Monde: {fileID: 645367096}
+  deltaOffsetHauteur: 0.0001
+  PlageNbComposantes: {x: 100, y: 200}
 --- !u!4 &1120842474
 Transform:
   m_ObjectHideFlags: 0
@@ -3955,9 +3968,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    vectorObservationSize: 0
+    vectorObservationSize: 1
     numStackedVectorObservations: 1
-    vectorActionSize: 02000000
+    vectorActionSize: 01000000
     vectorActionDescriptions: []
     vectorActionSpaceType: 0
   m_Model: {fileID: 0}
@@ -4060,6 +4073,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4137,6 +4151,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4615,6 +4630,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4692,6 +4708,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
