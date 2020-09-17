@@ -50,6 +50,10 @@ public class IADeplacementWF_2_4 : Agent
     // Conservateur de distance à l'objectif
     private float DistanceAObjectif;
 
+    // Si on tourne 4 fois, on prend un coup de poing
+    private int nbDeTournage = 0;
+    private bool encoreTournage = false;
+
     public void FixedUpdate()
     {
         WaitTimeInference();
@@ -126,41 +130,112 @@ public class IADeplacementWF_2_4 : Agent
         }
     }
 
+    public bool avanceDansLaBonneDirection()
+    {
+        RaycastHit RaycastEnDessous = LanceRayon(transform.position, -Vector3.up, Color.green, false);
+        if (RaycastEnDessous.collider == null)
+        {
+            return false;
+        }
+        if (RaycastEnDessous.collider.tag == "Segment")
+        {
+            if (Vector3.Normalize(RaycastEnDessous.collider.gameObject.GetComponent<SensDeParcours>().Direction) == Vector3.Normalize(transform.forward))
+            {
+                // print("good");
+                return true;
+            }
+            return false;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    bool TropLoinDeLaLigne()
+    {
+        int i = 0;
+        //while (worldBuilder.Ligne.transform.GetChild(i) != null)
+        //{
+        //    print("a");
+        //}
+        return true;
+    }
+
     public override void OnActionReceived(float[] vectorAction)
     {
+        Recompense = -1.0f;
+        AddReward(-1.0f);
+
         DistanceAObjectif = Vector3.Distance(transform.position, worldBuilder.PosisitonObjectif);
 
         var action = Mathf.FloorToInt(vectorAction[0]);
         ActionChoisie = action;
+
+        TropLoinDeLaLigne();
+
         if (action == k_NoAction)
         {
-            Recompense = -1.0f;
-            AddReward(-10.0f);
+            Recompense += -1.0f;
+            AddReward(-1.0f);
+            //encoreTournage = false;
+            //nbDeTournage = 0;
         }
         else if (action == k_Avance)
         {
+            //encoreTournage = false;
+            //nbDeTournage = 0;
+            bool b_avanceDansLaBonneDirection = avanceDansLaBonneDirection();
             transform.position = transform.position + (transform.forward * movementSpeed * Time.fixedDeltaTime);
-            if (EstSurLaLigne() && Vector3.Distance(transform.position,worldBuilder.PosisitonObjectif) < DistanceAObjectif)
+            if (EstSurLaLigne() && b_avanceDansLaBonneDirection /*&& Vector3.Distance(transform.position,worldBuilder.PosisitonObjectif) < DistanceAObjectif*/)
             {
-                Recompense = 1.0f;
-                AddReward(10.0f);
+                Recompense += 1.0f;
+                AddReward(1.0f);
             }
-            else
+            //else if (EstSurLaLigne())
+            //{
+            //    Recompense = 1.0f;
+            //    AddReward(1.0f);
+            /*}*/
+            else 
             {
-                Recompense = -1.0f;
+                Recompense += -1.0f;
                 AddReward(-1.0f);
             }
         }
         else if (action == k_TourneDroite || action == k_TourneGauche)
         {
-            AddReward(0.0f);
-            Recompense = 0.0f;
-            if(action == k_TourneDroite)
+            encoreTournage = true;
+            nbDeTournage++;
+            /*if (nbDeTournage > 3 && encoreTournage)
+            {
+                AddReward(-20.0f);
+                Recompense = -20.0f;
+                nbDeTournage = 0;
+            }
+            else
+            {
+                AddReward(0.0f);
+                Recompense = 0.0f;
+            }*/
+            //AddReward(0.0f);
+            //Recompense = 0.0f;
+            if (action == k_TourneDroite)
             {
                 transform.Rotate(0.0f, 90.0f, 0.0f, Space.Self);
             } else if (action == k_TourneGauche)
             {
                 transform.Rotate(0.0f, -90.0f, 0.0f, Space.Self);
+            }
+
+            if (avanceDansLaBonneDirection())
+            {
+                AddReward(1.0f);
+                Recompense += 1.0f;
+            } else
+            {
+                AddReward(-1.0f);
+                Recompense += -1.0f;
             }
         }
         else
@@ -193,6 +268,7 @@ public class IADeplacementWF_2_4 : Agent
         worldBuilder.DestroyAndResetPreviousWorld();
         transform.position = new Vector3(0.0f, 0.0f, 0.0f);
 
+        
     }
 
     public override float[] Heuristic()

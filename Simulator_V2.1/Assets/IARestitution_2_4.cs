@@ -96,7 +96,11 @@ public class IARestitution_2_4 : Agent
         Destroy(worldBuilder.Ligne);
         worldBuilder.build_trajectoire();
         worldBuilder.DestroyAndResetPreviousWorld();
-        transform.position = new Vector3(0.0f, 0.0f, 0.0f); 
+        transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+        transform.eulerAngles = new Vector3(0, 90, 0);
+
+        GetComponent<DeplacementAutonome_2_4>().resetDeplacementAutonome();
+
     }
 
     public override float[] Heuristic()

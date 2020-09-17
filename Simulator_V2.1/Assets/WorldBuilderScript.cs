@@ -20,6 +20,8 @@ public class WorldBuilderScript : MonoBehaviour
     public GameObject PrefabContour;
     // Prefab d'objectif
     public GameObject PrefabObjectif;
+    // Prefab de murs
+    public GameObject PrefabMur;
 
     // Générateur d'aléatoire
     private System.Random RandObj = new System.Random();
@@ -46,6 +48,9 @@ public class WorldBuilderScript : MonoBehaviour
 
     // Conteneur des morceaux de la ligne
     public GameObject Ligne;
+
+    // Conteneur des morceux de murs
+    public GameObject Mur;
 
     // A Changer
     // Conteneur du contour
@@ -144,11 +149,24 @@ public class WorldBuilderScript : MonoBehaviour
         return InstanceDeSegment;
     }
 
+    public GameObject InstancieWall(Vector3 position, Vector3 scale, GameObject mur)
+    {
+        GameObject InstanceDeMur = Instantiate(PrefabMur, mur.transform, true);
+        InstanceDeMur.transform.position = position;
+        InstanceDeMur.transform.localScale = scale;
+        InstanceDeMur.tag = "wall";
+        return InstanceDeMur;
+    }
+
     void createChemin(GameObject map, GameObject contour)
     {
         Ligne = new GameObject();
         Ligne.name = "Ligne";
         Ligne.transform.parent = map.transform.parent;
+
+        Mur = new GameObject();
+        Mur.name = "Mur";
+        Mur.transform.parent = map.transform.parent;
 
         // Nombre de composantes de la ligne
         int NombreDeComposantes = RandObj.Next((int)PlageBlocLigne.x, (int)PlageBlocLigne.y);
@@ -166,6 +184,16 @@ public class WorldBuilderScript : MonoBehaviour
         // AlignementDeParcours.Direction = DerniereInstanceDeSegment.transform.right;
 
         // MAJ de la direction du précédent segment
+        // Construction bloc de murs du départ
+        if (DescripteurDerniereConstruction == TypeDeplacementConstructionLigne.AVANCE)
+        {
+            InstancieWall(ProchainePositionDeCreation - 2 * transform.forward + 2 * transform.right + new Vector3(0.0f, 1.5f, 0.0f), new Vector3(0.1f, 3.0f, 1.0f), Mur);
+            InstancieWall(ProchainePositionDeCreation - 2 * transform.forward - 2 * transform.right + new Vector3(0.0f, 1.5f, 0.0f), new Vector3(0.1f, 3.0f, 1.0f), Mur);
+            GameObject wallDerriere = InstancieWall(ProchainePositionDeCreation - 2 * transform.forward + new Vector3(0.0f, 1.5f, -0.5f), new Vector3(4.0f, 3.0f, 0.1f), Mur);
+
+            InstancieWall(ProchainePositionDeCreation -  transform.forward + 2 * transform.right + new Vector3(0.0f, 1.5f, 0.0f), new Vector3(0.1f, 3.0f, 1.0f), Mur);
+            InstancieWall(ProchainePositionDeCreation -  transform.forward - 2 * transform.right + new Vector3(0.0f, 1.5f, 0.0f), new Vector3(0.1f, 3.0f, 1.0f), Mur);
+        }
         SensDeParcours AlignementDeParcoursPremier = DerniereInstanceDeSegment.GetComponent<SensDeParcours>();
         AlignementDeParcoursPremier.Direction = DerniereInstanceDeSegment.transform.forward;
         DerniereInstanceDeSegment.GetComponents<MeshRenderer>()[0].material.mainTexture = bckw;
@@ -179,6 +207,8 @@ public class WorldBuilderScript : MonoBehaviour
         ProchainePositionDeCreation += 1.0f * DerniereInstanceDeSegment.transform.forward;
         DerniereInstanceDeSegment = InstancieSegment(ProchainePositionDeCreation, new Vector3(1.0f, 0.0001f, 1.0f), Ligne);
         DescripteurDerniereConstruction = TypeDeplacementConstructionLigne.AVANCE;
+
+        
 
         // On construit le reste de la ligne
         for (int i = 0; i < NombreDeComposantes - 2; ++i)

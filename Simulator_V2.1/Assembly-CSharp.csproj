@@ -63,6 +63,7 @@
      <Compile Include="Assets\DeplacementAutonome_2_5.cs" />
      <Compile Include="Assets\GenerateurDeTrajectoire.cs" />
      <Compile Include="Assets\IADeplacementWF_2_4.cs" />
+     <Compile Include="Assets\IADeplacementWF_2_4_V2.cs" />
      <Compile Include="Assets\IARestitution_2_4.cs" />
      <Compile Include="Assets\IARestitution_2_5.cs" />
      <Compile Include="Assets\InitialisationDuMonde.cs" />
@@ -87,6 +88,7 @@
      <Compile Include="Assets\Scripts\SlowRotation.cs" />
      <Compile Include="Assets\SensDeParcours.cs" />
      <Compile Include="Assets\SimV2_2_AgentDeplacementVisionParfaite.cs" />
+     <Compile Include="Assets\TextureSaver.cs" />
      <Compile Include="Assets\WorldBuilderScript.cs" />
      <None Include="Assets\RenderTarget\Shaders\WireframeShader.shader" />
      <None Include="Assets\RenderTarget\Shaders\TestShaderFromScript.shader" />

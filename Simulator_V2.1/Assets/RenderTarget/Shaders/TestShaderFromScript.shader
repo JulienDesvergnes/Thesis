@@ -133,6 +133,9 @@
                 if (distance <= _rayon) {
                     col = sobel(_MainTex, milieuZone);
                     col.rgb = dot(col.rgb, float3(0.3, 0.59, 0.11));
+                    //if (col.r > 0.1) {
+                    //   col.rgb = fixed4(1, 1, 1, 1);
+                    //}
                 }
                 return col;
             }
